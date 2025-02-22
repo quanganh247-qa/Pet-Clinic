@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+/* Custom Calendar Styles */
+.custom-calendar .ant-picker-calendar-date-content {
+  height: 80px;
+  overflow: hidden;
+}
+
+.custom-calendar .events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.custom-calendar .ant-picker-calendar-date {
+  margin: 0 4px;
+  padding: 4px 8px;
+}
+
+.custom-calendar .ant-picker-cell {
+  pointer-events: auto;
+}
+
+.custom-calendar .ant-picker-calendar-date-value {
+  margin-bottom: 4px;
+}

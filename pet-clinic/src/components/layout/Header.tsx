@@ -7,7 +7,8 @@ import {
   CalendarOutlined,
   MedicineBoxOutlined,
   ShoppingOutlined,
-  BarChartOutlined
+  BarChartOutlined,
+  AppstoreOutlined
 } from '@ant-design/icons';
 import { Avatar } from 'antd';
 
@@ -21,6 +22,10 @@ export const Header: React.FC<HeaderProps> = ({ isCollapsed }) => {
       <div className="flex items-center justify-between h-full px-6">
         {/* Navigation Links */}
         <nav className="flex items-center space-x-8">
+          <Link to="/flowboard" className="flex items-center text-gray-600 hover:text-blue-600 group">
+            <AppstoreOutlined className="text-xl mr-2" />
+            <span className="group-hover:text-blue-600">Flowboard</span>
+          </Link>
           <Link to="/patients" className="flex items-center text-gray-600 hover:text-blue-600 group">
             <UserOutlined className="text-xl mr-2" />
             <span className="group-hover:text-blue-600">Patients</span>
@@ -41,6 +46,7 @@ export const Header: React.FC<HeaderProps> = ({ isCollapsed }) => {
             <BarChartOutlined className="text-xl mr-2" />
             <span>Statistics</span>
           </Link>
+      
         </nav>
 
         {/* Right Side Icons */}

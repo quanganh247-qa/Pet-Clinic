@@ -2,6 +2,8 @@ import React from 'react';
 import { Input, Select, Button, Table, Card, Checkbox } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import { PatientSearch } from './PatientSearch';
+import { useNavigate } from 'react-router-dom';
+
 interface Patient {
   id: number;
   petName: string;
@@ -13,6 +15,8 @@ interface Patient {
 }
 
 export const PatientsPage: React.FC = () => {
+  const navigate = useNavigate();
+
   const columns = [
     {
       title: '#',
@@ -64,6 +68,10 @@ export const PatientsPage: React.FC = () => {
     },
   ];
 
+  const handleRowClick = (record: Patient) => {
+    navigate(`/patients/${record.id}`);
+  };
+
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
@@ -83,6 +91,10 @@ export const PatientsPage: React.FC = () => {
           dataSource={dummyData}
           rowKey="id"
           className="shadow-sm"
+          onRow={(record) => ({
+            onClick: () => handleRowClick(record),
+            style: { cursor: 'pointer' }
+          })}
         />
       </Card>
     </div>
